@@ -1,0 +1,16 @@
+<html>
+    <head>
+        {% if title %}
+        <title> {{ title }} - web page</title>
+        {% else %}
+        <title>Module Not Found</title>
+        {% endif %}
+    </head>
+    <body>
+        <div> Module_Not_Found : <a href="/index">Home</a></div>
+        <hr>
+        {% block content %}{% endblock %}
+
+        
+    </body>
+</html>
