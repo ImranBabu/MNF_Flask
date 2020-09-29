@@ -8,10 +8,16 @@
     <p>
         {{ form.uname.label }}<br>
         {{ form.uname(size = 32) }}
+        {% for error in form.uname.errors %}
+        <span style = "color : red;">["Username required"]</span> 
+        {% endfor %}
     </p>
     <p>
         {{ form.password.label }}<br>
         {{ form.password(size = 32) }}
+        {% for error in form.password.errors %}
+        <span style = "color : red;">["Password required"]</span> 
+        {% endfor %}
     </p>
     <p> {{ form.remember_me() }} {{ form.remember_me.label }}</p>
     <p>{{ form.submit() }}</p>

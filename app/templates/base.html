@@ -8,12 +8,19 @@
     </head>
     <body>
         <div> Module_Not_Found : 
-            <a href="/index">Home</a>
-            <a href = "/login">Sign In</a>
+            <a href="{{url_for('index')}}">Home</a>
+            <a href = "{{url_for('login')}}">Sign In</a>
         </div>
         <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for i in messages %}
+            <li>{{ i }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
         {% block content %}{% endblock %}
-
-        
     </body>
 </html>
