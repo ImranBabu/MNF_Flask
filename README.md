@@ -24,3 +24,11 @@ Linux:
 export FLASK_APP = mnfapp.py
 flask run
 
+
+Flask Migrate steps :
+
+First Time :
+
+$ flask db init
+$ flask db migrate -m "First time migrate"
+$ flask db upgrade
